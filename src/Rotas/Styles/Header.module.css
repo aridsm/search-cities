@@ -1,5 +1,7 @@
 .header {
   display: flex;
+  border:1px solid red;
+  height: 4rem;
 }
 
 .header svg {

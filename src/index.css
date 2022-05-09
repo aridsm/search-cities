@@ -32,3 +32,18 @@ button {
   font-weight: inherit;
   cursor: pointer
 }
+
+main {
+  max-width: 60rem;
+  width: 100%;
+  padding: 7rem 0.8rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 10rem);
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
