@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+}
+
+.header svg {
+  width: 1.5rem;
+  fill: var(--cinza)
+}

@@ -1,12 +1,15 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import PagInicial from './Rotas/PagInicial';
+import Header from './Rotas/Header'
+import Footer from './Rotas/Footer'
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
     <Header />
     <Routes>
-      <Route />
+      <Route path='/' element={<PagInicial />} />
     </Routes>
     <Footer />
     </BrowserRouter>
