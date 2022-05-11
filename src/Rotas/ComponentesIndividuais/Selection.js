@@ -7,10 +7,6 @@ const Selection = ({ option, setOption, url }) => {
   const {data, error, loading, request} = useFetch()
 
   React.useEffect(() => {
-    console.log(url)
-  },[url])
-
-  React.useEffect(() => {
     async function fetchData(){
         await request(url)
     }
