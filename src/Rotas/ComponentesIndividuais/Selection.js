@@ -1,5 +1,7 @@
 import React from 'react'
 import useFetch from '../../Hooks/useFetch'
+import Carregando from '../Utilities/Carregando'
+import Erro from '../Utilities/Erro'
 import SelectInput from './SelectInput'
 
 const Selection = ({ option, setOption, url }) => {
@@ -11,17 +13,16 @@ const Selection = ({ option, setOption, url }) => {
         await request(url)
     }
     fetchData()
-    console.log(data)
   }, [request, url])
 
-  if(error) return <p>Erro</p>
-  if(loading) return <p>carregando</p>
+  if(error) return <Erro />
+  if(loading) return <Carregando />
   if(data)
   return (
     <>
         {data._links["continent:items"] && <SelectInput data={data._links["continent:items"]} option={option} setOption={setOption} type='continent'/>}
 
-        {data._links["country:items"] && <SelectInput data={data._links["country:items"]} option={option} setOption={setOption} type='country'/>}
+        {data._links["country:items"] && <SelectInput data={data._links["country:items"]} option={option} setOption={setOption} type='country'/> }
 
         {data._links["a1:items"] && data._links["a1:items"].length ? <SelectInput data={data._links["a1:items"]} option={option} setOption={setOption} type='administrative region'/>
         : ''
