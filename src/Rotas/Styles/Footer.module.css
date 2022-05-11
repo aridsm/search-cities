@@ -7,3 +7,6 @@
 .footer > div + div {
   margin-top: 0.5rem;
 }
+.footer a:hover {
+  color: rgba(0, 0, 0, 1)
+}

@@ -1,15 +1,17 @@
 import React from 'react'
 import Form from './ComponentesIndividuais/Form'
 import ListaCidades from './ComponentesIndividuais/ListaCidades'
-import Titulo from './ComponentesIndividuais/Titulo'
 //
 const PagListaCidades = () => {
 
+  const [adminRegion, setAdminRegion] = React.useState(null)
+  const base = 'https://api.teleport.org/api'
+
   return (
     <main>
-      <Titulo />
-      <Form />
-      <ListaCidades />
+      <h1>Cities List</h1>
+      <Form adminRegion={adminRegion} setAdminRegion={setAdminRegion} base={base}/>
+      <ListaCidades url={`${adminRegion}cities/`}/>
     </main>
   )
 }

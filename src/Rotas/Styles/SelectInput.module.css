@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.select:hover, .select:active {
+.select:hover, .select:focus {
   border: 1px solid rgb(0, 0, 0, 0.6);
   box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.05);
   color: rgb(0, 0, 0, 1);

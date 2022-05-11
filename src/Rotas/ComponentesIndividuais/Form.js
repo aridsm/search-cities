@@ -5,14 +5,14 @@ const styles = {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr',
   gridGap: '2rem',
-  padding: '3rem 0'
+  padding: '3rem 0',
+  borderBottom: '1px dashed rgba(0,0,0,0.3)',
+  marginBottom: '3rem'
 }
 
-const Form = () => {
+const Form = ({adminRegion, setAdminRegion, base}) => {
   const [continenteURL, setContinenteURL] = React.useState(null)
   const [paisURL, setPaisURL] = React.useState(null)
-  const [adminRegion, setAdminRegion] = React.useState(null)
-  const base = 'https://api.teleport.org/api'
 
   return (
     <form style={styles}>

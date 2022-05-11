@@ -1,0 +1,11 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem
+}
+.nav a {
+  transition: 0.1s;
+}
+.nav a:hover {
+  color: var(--cor-3);
+}
