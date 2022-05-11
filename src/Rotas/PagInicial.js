@@ -1,16 +1,14 @@
 import React from 'react';
-import {ReactComponent as SearchSvg} from '../assets/SearchSvg.svg';
+import {ReactComponent as PontosSvg} from '../assets/PontosSvg.svg';
 import styles from './Styles/PagInicial.module.css'
+import SearchInput from './ComponentesIndividuais/SearchInput';
 
 const PagInicial = () => {
   return (
     <main className={styles.main}>
-      <h1>Por qual <span>cidade</span> você está procurando?</h1>
-      <form className={styles.form}>
-        <label>Procure por uma cidade</label>
-        <input type='search' name='search' id='search' placeholder='Ex: Cairo'/>
-        <SearchSvg />
-      </form>
+      <h1>What <span>city</span> are you looking for?</h1>
+      <SearchInput />
+      <PontosSvg className={styles.svgPontos}/>
     </main>
   )
 }
