@@ -5,6 +5,8 @@ import styles from '../Rotas/Styles/PagCidades.module.css'
 import {ReactComponent as PontosSvg} from '../assets/PontosSvg.svg'
 import {ReactComponent as PersonSvg} from '../assets/personSvg.svg'
 import UrbanAreaDados from './ComponentesIndividuais/UrbanAreaDados'
+import Erro from './Utilities/Erro'
+import Carregando from './Utilities/Carregando'
 
 const PagCidades = () => {
 
@@ -17,9 +19,10 @@ const PagCidades = () => {
       await request(base + 'cities/geonameid:' + param.id)
     }
     fetchData()
-    console.log(data)
   }, [param, request])
 
+  if(error) return <Erro />
+  if(loading) return <Carregando />
   if(data)
   return (
     <main>
@@ -31,12 +34,16 @@ const PagCidades = () => {
       data._links["city:urban_area"]
       ?
       <>
-      <p className={styles.belongs}>Belong to <span>{data._links["city:urban_area"].name}</span> urban area</p>
-      <UrbanAreaDados />
-      </>
-      : "This city doesn't belong to any urban area"
-      }
+      <p className={styles.belongs}>Belongs to <span>{data._links["city:urban_area"].name}</span> urban area</p>
       <PontosSvg className={styles.pontosSvg}/>
+      <UrbanAreaDados urbArea={data._links["city:urban_area"]} />
+      </>
+      :
+      <>
+      <p className={styles.belongs}>This city doesn't belong to any urban area</p>
+      <PontosSvg className={styles.pontosSvg}/>
+      </>
+      }
     </main>
   )
 }
