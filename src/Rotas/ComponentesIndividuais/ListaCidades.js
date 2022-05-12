@@ -23,7 +23,7 @@ const ListaCidades = ({url}) => {
   return (
     <nav className={styles.nav}>
       {data._links["city:items"].map(item => 
-      <Link key={item.name} to={`${item.href.substring(item.href.length - 8)}`}>{item.name}</Link>
+      <Link key={item.name} to={`${item.href.substring(item.href.indexOf('geonameid:') + 10)}`}>{item.name}</Link>
       )}
     </nav>
   )

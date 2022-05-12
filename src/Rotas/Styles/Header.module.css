@@ -36,6 +36,8 @@
 .logo {
   text-align: center;
   height: 100%;
+  font-weight: 900;
+  font-size: 0.875rem;
 }
 .logo svg {
   width: 5rem;

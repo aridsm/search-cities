@@ -4,6 +4,7 @@ import useFetch from '../../Hooks/useFetch'
 import Erro from '../Utilities/Erro'
 import Carregando from '../Utilities/Carregando'
 
+
 const UrbanAreaScore = ({url, name}) => {
   const {data, error, loading, request} = useFetch()
 
@@ -20,11 +21,11 @@ const UrbanAreaScore = ({url, name}) => {
   return (
     <>
     {data.categories.filter(item => item.name === name).map(item =>
-      <div className={styles.barscore}>
+      <div className={styles.barscore} key={item.name}>
         <p className={styles.score}>{item.score_out_of_10.toFixed(1)}</p>
         <div className={styles.bar}>
           <span className={styles.txt}>score</span>
-          <div className={styles.range}></div>
+          <div className={styles.range} style={{width: item.score_out_of_10 * 10 + '%'}}></div>
         </div>
       </div>
       )}

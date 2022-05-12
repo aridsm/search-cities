@@ -4,12 +4,14 @@
 
 .country, .division {
   font-size: 0.875rem;
+  text-align: center;
 }
 
 .pop {
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .pop span {
@@ -19,10 +21,13 @@
 
 .titulo {
   margin-bottom: 0.2rem;
+  text-align: center;
 }
 
 .pontosSvg {
-  width: 3rem
+  width: 3rem;
+  margin: 0 auto;
+  display: block;
 }
 
 .personSvg {
@@ -31,6 +36,7 @@
 }
 
 .belongs {
+  text-align: center;
   margin-top: 4rem;
 }
 

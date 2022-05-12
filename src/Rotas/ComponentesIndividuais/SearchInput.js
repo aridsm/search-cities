@@ -2,7 +2,6 @@ import React from 'react'
 import {ReactComponent as SearchSvg} from '../../assets/SearchSvg.svg';
 import styles from '../Styles/SearchInput.module.css'
 
-
 const SearchInput = () => {
   return (
   <form className={styles.form}>
