@@ -1,0 +1,39 @@
+.division span, .country span {
+  font-weight: 900;
+}
+
+.country, .division {
+  font-size: 0.875rem;
+}
+
+.pop {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.pop span {
+  font-weight: 900;
+  margin-left: 0.3rem;
+}
+
+.titulo {
+  margin-bottom: 0.2rem;
+}
+
+.pontosSvg {
+  width: 3rem
+}
+
+.personSvg {
+  width: .8rem;
+  margin-right: .5rem;
+}
+
+.belongs {
+  margin-top: 4rem;
+}
+
+.belongs span {
+  font-weight: 900;
+}

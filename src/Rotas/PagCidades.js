@@ -1,6 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../Hooks/useFetch'
+import styles from '../Rotas/Styles/PagCidades.module.css'
+import {ReactComponent as PontosSvg} from '../assets/PontosSvg.svg'
+import {ReactComponent as PersonSvg} from '../assets/personSvg.svg'
+import UrbanAreaDados from './ComponentesIndividuais/UrbanAreaDados'
 
 const PagCidades = () => {
 
@@ -19,11 +23,20 @@ const PagCidades = () => {
   if(data)
   return (
     <main>
-      <h1>{data.name}</h1>
-      <p>Division: {data._links["city:admin1_division"].name}</p>
-      <p>Country: {data._links["city:country"].name}</p>
-      <p>Population: {data.population}</p>
-      {data._links["city:urban_area"] ? <p>Belong to {data._links["city:urban_area"].name} urban area</p> : "This city doesn't belong to any urban area"}
+      <h1 className={styles.titulo}>{data.name}</h1>
+      <p className={styles.division}><span>Division</span>: {data._links["city:admin1_division"].name}</p>
+      <p className={styles.country}><span>Country</span>: {data._links["city:country"].name}</p>
+      <p className={styles.pop}><PersonSvg className={styles.personSvg} />Population: <span>{data.population}</span></p>
+      {
+      data._links["city:urban_area"]
+      ?
+      <>
+      <p className={styles.belongs}>Belong to <span>{data._links["city:urban_area"].name}</span> urban area</p>
+      <UrbanAreaDados />
+      </>
+      : "This city doesn't belong to any urban area"
+      }
+      <PontosSvg className={styles.pontosSvg}/>
     </main>
   )
 }
