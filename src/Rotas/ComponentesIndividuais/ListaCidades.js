@@ -12,7 +12,6 @@ const ListaCidades = ({url}) => {
   React.useEffect(() => {
     async function fetchData() {
       await request(url)
-      console.log(data)
     }
     fetchData()
   }, [url, request])

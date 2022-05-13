@@ -8,7 +8,6 @@ const styles = {
   lineHeight: '2.5rem',
   textAlign: 'center',
   fontSize: '0.875rem',
-
 }
 
 const Carregando = () => {

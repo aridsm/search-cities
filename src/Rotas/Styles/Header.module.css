@@ -24,21 +24,36 @@
   color: rgba(0, 0, 0, 1)
 }
 
-.header form {
-  text-align: right;
-}
-
-.header form svg {
-  width: 1.5rem;
-  fill: var(--cinza)
-}
-
 .logo {
   text-align: center;
   height: 100%;
   font-weight: 900;
   font-size: 0.875rem;
 }
+
 .logo svg {
   width: 5rem;
+}
+
+.btnSearch {
+  width: 2rem;
+  order: 2;
+  background: transparent;
+  border:none;
+}
+
+.btnSearch svg {
+  width: 1.3rem;
+  fill: rgba(0, 0, 0, 0.3)
+}
+
+.btnSearch svg:hover {
+  fill: black
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }

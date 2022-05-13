@@ -1,15 +1,29 @@
 .form svg {
   width: 1rem;
+  height: 1rem;
   fill: rgb(0, 0, 0, 0.3);
   position: absolute;
   top: 0.7rem;
-  right: 1rem
+  right: 1rem;
+  z-index: 999;
+}
+.btnClose {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+   top: 0.7rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.btnClose svg {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  z-index: 9999;
 }
 
 .form {
-  max-width: 30rem;
-  width: 100%;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -21,13 +35,19 @@
 
 .form input {
   border: 1px solid rgb(0, 0, 0, 0.3);
-  background: transparent;
+  background: #FCFDFA;
   border-radius: 0.2rem;
   padding: 0.5rem;
   width: 100%;
   text-align: center;
   transition: 0.2s;
   outline: none;
+  position: relative;
+  z-index: 999;
+}
+
+.form input::-webkit-search-cancel-button {
+  display: none;
 }
 
 .form input::placeholder {
@@ -37,4 +57,37 @@
 .form input:hover, .form input:focus {
   border: 1px solid rgb(0, 0, 0, 0.6);
   box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.05);
+}
+
+.results {
+  max-width: 30rem;
+  max-height: 15rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  position: absolute;
+  right:0;
+  left:0;
+  background: #FCFDFA;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+  border-radius: 0.2rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 0.5rem 0;
+}
+
+.results a {
+  padding: 0.7rem;
+  display: block;
+  transition: .1s;
+}
+
+.results a:hover {
+  color: var(--cor-4);
+  background: rgba(0,0,0,0.03);
+}
+
+.formContainer {
+  max-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
 }
