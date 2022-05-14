@@ -7,9 +7,6 @@ const PagListaCidades = () => {
   const [adminRegion, setAdminRegion] = React.useState(null)
   const base = 'https://api.teleport.org/api'
 
-  React.useEffect(() => {
-    console.log(adminRegion)
-  }, [adminRegion])
   return (
     <main>
       <h1>Cities List</h1>

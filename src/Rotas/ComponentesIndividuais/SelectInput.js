@@ -17,11 +17,14 @@ const SelectInput = ({option, setOption, data, type}) => {
     <div>
         <label htmlFor={type} className={styles.label}>{type}</label>
         <select value={option} onChange={handleChange} className={styles.select} id={type} ref={value}>
-          {
+          {data.length ?
           data.map(item => 
           <option key={item.name} value={item.href}>{item.name}</option>
           )
-          } 
+          :
+          <option value=''>No matches</option>
+          }
+
         </select>
     </div>
   )

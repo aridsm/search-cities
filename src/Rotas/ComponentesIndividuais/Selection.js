@@ -13,7 +13,6 @@ const Selection = ({ option, setOption, url }) => {
         await request(url)
     }
     fetchData()
-    console.log(data)
   }, [request, url])
 
   if(error) return <Erro />
@@ -25,7 +24,7 @@ const Selection = ({ option, setOption, url }) => {
 
         {data._links["country:items"] && <SelectInput data={data._links["country:items"]} option={option} setOption={setOption} type='country'/> }
 
-        {data._links["a1:items"] && data._links["a1:items"].length ? <SelectInput data={data._links["a1:items"]} option={option} setOption={setOption} type='administrative region'/>
+        {data._links["a1:items"] ? <SelectInput data={data._links["a1:items"]} option={option} setOption={setOption} type='administrative region'/>
         : ''
         }
     </>
