@@ -1,4 +1,3 @@
-import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PagInicial from './Rotas/PagInicial';
 import Header from './Rotas/Header'

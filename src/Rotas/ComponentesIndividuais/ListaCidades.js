@@ -13,7 +13,6 @@ const ListaCidades = ({url}) => {
       await request(url)
     }
     fetchData()
-    console.log(data)
   }, [url, request])
 
   if (error || (data && !data._links["city:items"].length)) return <p>There are no cities in this region/country</p>

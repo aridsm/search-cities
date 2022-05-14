@@ -18,16 +18,16 @@ const UrbanAreaDataItem = ({item, urbArea}) => {
 
   return (
     <>
-      <article>
+      <article className={styles.article}>
         <button className={styles.button} onClick={() => setIsButtonPressed(!isButtonPressed)}>
-          <span>{item.label}</span>
+          <span className={styles.nameBtn}>{item.label}</span>
           <UrbanAreaScore url={urbArea.href} name={item.label}/>
           <span className={styles.plusminus}>{isButtonPressed ? '-' : '+'}</span>
         </button>
         <ul className={styles.ul} style={isButtonPressed ? style.active : style.inactive}>
           {item.data.map(data => 
             <li key={data.id}>
-              <span>{data.label.replaceAll('[','(').replaceAll(']',')')}</span>
+              <span className={styles.labelItem}>{data.label.replaceAll('[','(').replaceAll(']',')')}</span>
               <span>{data.float_value || data.string_value || data.percent_value || data.currency_dollar_value || data.int_value}</span>
             </li>
           )}

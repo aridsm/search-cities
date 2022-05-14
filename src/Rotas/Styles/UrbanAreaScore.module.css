@@ -33,3 +33,18 @@
   font-weight: 900;
   font-size: 1rem;
 }
+
+@media all and (max-width: 720px) {
+  .barscore {
+    width: 15rem;
+    margin-right: 1rem;
+  }
+  .score, .txt {
+    font-size: 0.7rem;
+    margin-right: 0.5rem;
+  }
+
+  .txt {
+    top: -1rem
+  }
+}

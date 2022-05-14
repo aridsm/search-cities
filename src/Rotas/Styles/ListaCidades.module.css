@@ -6,3 +6,22 @@
 .nav a:hover {
   color: var(--cor-4);
 }
+
+@media all and (max-width: 750px) {
+  .nav {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 400px) {
+  .nav {
+    grid-template-columns: 1fr;
+  }
+}

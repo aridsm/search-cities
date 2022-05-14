@@ -57,3 +57,33 @@
   justify-content: flex-end;
   position: relative;
 }
+
+@media all and (max-width: 550px) {
+  
+.logo {
+  order: -1
+}
+
+.logo svg {
+  width: 3.5rem;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.header > * {
+  flex: 0;
+}
+.searchField div {
+  width: calc(100vw - 20px);
+  position: absolute;
+  right:0
+}
+
+.nav {
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+}
+}

@@ -16,7 +16,8 @@ const SearchInput = () => {
 
   const fetchData = React.useCallback(async (value) => {
      await request(`https://api.teleport.org/api/cities/?search=${value}&limit=10`)
-  }, [request])
+     console.log(data)
+  }, [request, data])
 
   const handleChange = React.useCallback((e) => {
     e.preventDefault();
@@ -45,12 +46,16 @@ const SearchInput = () => {
   {data && searchValue.length && isVisible ? 
     <ul className={styles.results}>
       {data._embedded["city:search-results"].map(item => 
-      <li>
+      <li key={item.matching_full_name}>
         <Link to={`/cidades/${(item._links["city:item"].href).substring((item._links["city:item"].href).indexOf('geonameid:') + 10)}`}>{item.matching_full_name}</Link>
       </li>
       )}
     </ul>
-    : loading ? <Carregando /> : ''
+    : loading ?
+    <ul className={styles.results}>
+      <Carregando />
+    </ul>
+    : ''
   }
   </div>
   </>

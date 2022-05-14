@@ -26,7 +26,7 @@ const Header = () => {
       <button className={styles.btnSearch} ariaLabel='abrir barra de pesquisa'>
         <SvgSearch />
       </button>}
-     {isVisible && <SearchInput className={styles.searchInput}/>}
+     {isVisible && <SearchInput/>}
       </div>
     </header>
   )

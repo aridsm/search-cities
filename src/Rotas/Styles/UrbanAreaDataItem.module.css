@@ -50,3 +50,18 @@
   font-size: 1.5rem;
   width: 1rem
 }
+
+@media all and (max-width: 720px) {
+  .article {
+    font-size: 0.875rem !important;
+  }
+
+  .nameBtn {
+    text-align: left;
+    margin-right: 1rem;
+  }
+
+  .labelItem {
+    margin-right: 1.5rem;
+  }
+}
