@@ -13,13 +13,13 @@ const App = () => {
     <BrowserRouter>
     <Header />
     <Routes>
-      <Route path='/' element={<PagInicial />} />
-      <Route path='/cidades' element={<Cidades />}>
+      <Route path='/search-cities' element={<PagInicial />} />
+      <Route path='/search-cities/cidades' element={<Cidades />}>
         <Route path='' element={<PagListaCidades />} />
         <Route path=':id' element={<PagCidades />} />
         <Route path=':id/*' element={<Erro404 />} />
       </Route>
-      <Route path='/*' element={<Erro404 />} />
+      <Route path='/search-cities/*' element={<Erro404 />} />
     </Routes>
     <Footer />
     </BrowserRouter>

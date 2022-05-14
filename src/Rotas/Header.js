@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <NavLink to='/' end>Home</NavLink>
-        <NavLink to='cidades'>List of cities</NavLink>
+        <NavLink to='/search-cities' end>Home</NavLink>
+        <NavLink to='/search-cities/cidades'>List of cities</NavLink>
       </nav>
       <div className={styles.logo}>
         <LogoSvg />

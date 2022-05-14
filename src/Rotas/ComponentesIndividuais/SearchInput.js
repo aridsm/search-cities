@@ -46,7 +46,7 @@ const SearchInput = () => {
     <ul className={styles.results}>
       {data._embedded["city:search-results"].map(item => 
       <li key={item.matching_full_name}>
-        <Link to={`/cidades/${(item._links["city:item"].href).substring((item._links["city:item"].href).indexOf('geonameid:') + 10)}`}>{item.matching_full_name}</Link>
+        <Link to={`/search-cities/cidades/${(item._links["city:item"].href).substring((item._links["city:item"].href).indexOf('geonameid:') + 10)}`}>{item.matching_full_name}</Link>
       </li>
       )}
     </ul>
