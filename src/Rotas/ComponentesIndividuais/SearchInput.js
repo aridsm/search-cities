@@ -16,8 +16,7 @@ const SearchInput = () => {
 
   const fetchData = React.useCallback(async (value) => {
      await request(`https://api.teleport.org/api/cities/?search=${value}&limit=10`)
-     console.log(data)
-  }, [request, data])
+  }, [request])
 
   const handleChange = React.useCallback((e) => {
     e.preventDefault();

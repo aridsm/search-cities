@@ -17,6 +17,7 @@ const App = () => {
       <Route path='/cidades' element={<Cidades />}>
         <Route path='' element={<PagListaCidades />} />
         <Route path=':id' element={<PagCidades />} />
+        <Route path=':id/*' element={<Erro404 />} />
       </Route>
       <Route path='/*' element={<Erro404 />} />
     </Routes>

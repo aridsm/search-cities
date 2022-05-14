@@ -37,6 +37,8 @@
 @media all and (max-width: 720px) {
   .barscore {
     width: 15rem;
+    max-width: 15rem;
+    min-width: 15rem;
     margin-right: 1rem;
   }
   .score, .txt {
@@ -46,5 +48,13 @@
 
   .txt {
     top: -1rem
+  }
+}
+
+@media all and (max-width: 430px) {
+  .barscore {
+    width:8rem;
+    max-width:8rem;
+    min-width:8rem;
   }
 }
