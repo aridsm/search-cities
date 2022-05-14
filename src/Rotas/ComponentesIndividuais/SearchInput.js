@@ -1,15 +1,17 @@
 import React from 'react'
 import {ReactComponent as SearchSvg} from '../../assets/SearchSvg.svg';
-import {ReactComponent as closeSvg} from '../../assets/closeSvg.svg';
+import {ReactComponent as CloseSvg} from '../../assets/closeSvg.svg';
 import styles from '../Styles/SearchInput.module.css'
 import useFetch from '../../Hooks/useFetch'
 import { Link } from 'react-router-dom';
 import useVisibility from '../../Hooks/useVisibility';
+import Carregando from '../Utilities/Carregando'
 
 const SearchInput = () => {
   const [searchValue, setSearchValue] = React.useState('')
-  const {data, error, request, loading} = useFetch()
+  const {data, request, loading} = useFetch()
   const ref = React.useRef()
+  const input = React.useRef()
   const {isVisible} = useVisibility(ref)
 
   const fetchData = React.useCallback(async (value) => {
@@ -27,12 +29,16 @@ const SearchInput = () => {
   <div ref={ref} className={styles.formContainer}>
   <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
     <label htmlFor='search'>Search for a city</label>
-    <input type='search' name='search' id='search' placeholder='Ex: Cairo' autoComplete="off" onInput={handleChange}/>
+    <input ref={input} type='search' name='search' id='search' placeholder='Ex: Cairo' autoComplete="off" onInput={handleChange}/>
     {!isVisible ?
-     <SearchSvg />
+     <SearchSvg className={styles.searchSvg}/>
      :
-     <button className={styles.btnClose}>
-       <closeSvg />
+     <button className={styles.btnClose} onClick={() => {
+       setSearchValue('');
+       input.current.value = '';
+       input.current.focus()
+       }}>
+       <CloseSvg />
      </button>
     }
   </form>
@@ -44,7 +50,7 @@ const SearchInput = () => {
       </li>
       )}
     </ul>
-    : ''
+    : loading ? <Carregando /> : ''
   }
   </div>
   </>

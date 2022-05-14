@@ -1,4 +1,4 @@
-.form svg {
+.searchSvg {
   width: 1rem;
   height: 1rem;
   fill: rgb(0, 0, 0, 0.3);
@@ -8,19 +8,29 @@
   z-index: 999;
 }
 .btnClose {
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-   top: 0.7rem;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0.7rem;
   right: 1rem;
   z-index: 999;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
 }
 
 .btnClose svg {
-  width: 1rem;
-  height: 1rem;
   position: relative;
   z-index: 9999;
+  margin: auto;
+  fill:rgb(0, 0, 0, 0.3);
+  width: 0.8rem;
+  top: -2px;
+}
+
+.btnClose:hover svg {
+  fill: black
 }
 
 .form {
@@ -40,7 +50,6 @@
   padding: 0.5rem;
   width: 100%;
   text-align: center;
-  transition: 0.2s;
   outline: none;
   position: relative;
   z-index: 999;
@@ -78,7 +87,6 @@
 .results a {
   padding: 0.7rem;
   display: block;
-  transition: .1s;
 }
 
 .results a:hover {

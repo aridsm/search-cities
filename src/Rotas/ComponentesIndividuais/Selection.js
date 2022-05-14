@@ -13,6 +13,7 @@ const Selection = ({ option, setOption, url }) => {
         await request(url)
     }
     fetchData()
+    console.log(data)
   }, [request, url])
 
   if(error) return <Erro />

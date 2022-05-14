@@ -7,11 +7,10 @@
   padding: 1.5rem;
   border: 1px solid rgba(0,0,0,0.1);
   border-left: none;
-  background: transparent;
+  background: #FCFDFA;
   position: relative;
   font-weight: 900;
   color: rgba(0,0,0,0.6);
-  transition: .2s;
   margin: 0.2rem 0;
 }
 

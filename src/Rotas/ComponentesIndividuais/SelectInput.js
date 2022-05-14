@@ -7,12 +7,10 @@ const SelectInput = ({option, setOption, data, type}) => {
 
   React.useEffect(() => {
     setOption(value.current.value);
-
   }, [setOption])
 
   const handleChange = (e) => {
     setOption(e.target.value);
-    console.log(option)
   }
 
   return (
