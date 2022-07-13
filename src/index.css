@@ -7,18 +7,6 @@
   transition: .1s;
 }
 
-/*
-body {
-  background: #FCFDFA;
-  --cor-1: #FF401F;
-  --cor-2: #E80C57;
-  --cor-3: #E401FF;
-  --cor-4: #6D0CE8;
-  --texto: #1A1817;
-  --cinza: #8D8D8D;
-  font-family: 'Merriweather', serif;
-}
-*/
 body {
   background: var(--cor-5);
   --cor-1: #FF401F;
@@ -31,7 +19,7 @@ body {
   --cor-hover: #29292e;
   font-family: 'Merriweather', serif;
   color: var(--texto);
-  background-image: url('./assets/Polygon-0.3s-1333px.svg'), url('./assets/blob-scene-haikei.svg');
+  background-image: url('./assets/bg1.svg'), url('./assets/bg2.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
