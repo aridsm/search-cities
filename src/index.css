@@ -57,7 +57,7 @@ input {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -68,10 +68,4 @@ input {
   background-image: linear-gradient(180deg, var(--cor-2), var(--cor-1));
   border-radius: 6px;
   border: 1px solid var(--cor-5)
-}
-
-@media all and (max-width: 400px) {
-  h1 {
-    font-size: 2rem;
-  }
 }

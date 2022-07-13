@@ -8,7 +8,7 @@
   background: var(--cor-5);
   position: relative;
   font-weight: 900;
-  margin: 0.2rem 0;
+  margin: 0.3rem 0;
   border: 1px solid var(--cor-hover);
   color: var(--cinza)
 }

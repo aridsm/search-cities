@@ -22,7 +22,7 @@ const PagCidades = () => {
   }, [param, request])
 
   if (error) return <Erro />
-  if (loading) return <Carregando />
+  if (loading) return <main><Carregando /></main>
   if (data)
     return (
       <main>

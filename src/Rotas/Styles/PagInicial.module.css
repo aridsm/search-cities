@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem
 }
 
 .main h1 {
@@ -20,4 +21,10 @@
 .svgPontos {
   width: 3rem;
   margin-top: 2rem;
+}
+
+@media all and (max-width: 400px) {
+  .main h1 {
+    font-size: 2rem;
+  }
 }

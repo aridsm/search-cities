@@ -1,6 +1,6 @@
-.containerCarregando {
+.carregando {
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
@@ -17,4 +17,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.containerCarregando {
+  padding: 2rem;
+  display: grid;
+  place-items: center;
 }
