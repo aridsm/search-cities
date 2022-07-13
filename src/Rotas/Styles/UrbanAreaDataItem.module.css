@@ -1,23 +1,22 @@
-
 .button {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border: 1px solid rgba(0,0,0,0.1);
   border-left: none;
-  background: #FCFDFA;
+  background: var(--cor-5);
   position: relative;
   font-weight: 900;
-  color: rgba(0,0,0,0.6);
   margin: 0.2rem 0;
+  border: 1px solid var(--cor-hover);
+  color: var(--cinza)
 }
 
 .button:hover {
-  color: rgba(0,0,0, 1);
-  background: rgba(0,0,0,0.02);
-
+  color: var(--texto);
+  border-color: var(--texto);
+  border-left-color: transparent;
 }
 
 .button::before {
@@ -27,13 +26,15 @@
   height: calc(100% + 2px);
   display: block;
   position: absolute;
-  left:0
+  left: 0
 }
 
 .ul {
-  background-color: rgba(0,0,0,0.03);
-  color: rgba(0,0,0,0.6);
+  background-color: #13131a;
+  color: var(--cinza);
   overflow: hidden;
+  border-left: 1px solid var(--cor-hover);
+  border-right: 1px solid var(--cor-hover);
   transition: all 0.7s ease;
 }
 
@@ -42,8 +43,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border:none;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border: none;
+  border-bottom: 1px solid var(--cor-hover);
 }
 
 .plusminus {

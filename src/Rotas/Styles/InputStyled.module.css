@@ -1,0 +1,32 @@
+.container input,
+.container select {
+  border: 1px solid var(--cinza);
+  border-radius: 3rem;
+  padding: 0.7rem;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  position: relative;
+  z-index: 999;
+  font-family: inherit;
+  font-weight: inherit;
+  color: var(--cinza);
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: var(--cor-5);
+}
+
+.container input:hover,
+.container input:focus,
+.container select:hover,
+.container select:focus {
+  border: 1px solid var(--texto);
+  box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.03);
+  color: var(--texto);
+}
+
+.container input::placeholder,
+.container select::placeholder {
+  font-size: 0.875rem;
+  color: inherit
+}

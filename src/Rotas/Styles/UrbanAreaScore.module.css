@@ -1,7 +1,7 @@
 .bar {
   width: 100%;
-  height: 0.8rem;
-  background: rgba(0,0,0,0.1);
+  height: 0.5rem;
+  background: var(--cor-hover);
   position: relative;
 }
 
@@ -22,16 +22,16 @@
 .txt {
   position: absolute;
   color: var(--cor-2);
-  left:0;
+  left: 0;
   top: -1.2rem;
   font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .score {
   margin-right: 1rem;
   color: var(--cor-2);
-  font-weight: 900;
-  font-size: 1rem;
+  font-weight: 400;
 }
 
 @media all and (max-width: 720px) {
@@ -41,7 +41,9 @@
     min-width: 15rem;
     margin-right: 1rem;
   }
-  .score, .txt {
+
+  .score,
+  .txt {
     font-size: 0.7rem;
     margin-right: 0.5rem;
   }
@@ -53,8 +55,8 @@
 
 @media all and (max-width: 430px) {
   .barscore {
-    width:8rem;
-    max-width:8rem;
-    min-width:8rem;
+    width: 8rem;
+    max-width: 8rem;
+    min-width: 8rem;
   }
 }

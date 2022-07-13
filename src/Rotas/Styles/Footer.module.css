@@ -1,12 +1,13 @@
 .footer {
   height: 6rem;
   text-align: center;
-  color: rgba(0,0,0,0.6)
+  color: var(--cinza)
 }
 
-.footer > div + div {
+.footer>div+div {
   margin-top: 0.5rem;
 }
+
 .footer a:hover {
-  color: rgba(0, 0, 0, 1)
+  color: var(--texto)
 }

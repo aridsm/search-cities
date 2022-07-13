@@ -1,10 +1,13 @@
-.division span, .country span {
+.division span,
+.country span {
   font-weight: 900;
 }
 
-.country, .division {
+.country,
+.division {
   font-size: 0.875rem;
   text-align: center;
+  color: var(--cinza)
 }
 
 .pop {
@@ -33,6 +36,7 @@
 .personSvg {
   width: .8rem;
   margin-right: .5rem;
+  fill: var(--texto)
 }
 
 .belongs {

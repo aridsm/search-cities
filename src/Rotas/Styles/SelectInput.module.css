@@ -1,26 +1,7 @@
-.select {
-  border: 1px solid rgba(0,0,0,0.3);
-  padding: .5rem;
-  width:100%;
-  border-radius: 0.2rem;
-  background: #FCFDFA;
-  outline: none;
-  font-family: inherit;
-  font-weight: inherit;
-  color: rgb(0, 0, 0, 0.6);
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-
-.select:hover, .select:focus {
-  border: 1px solid rgb(0, 0, 0, 0.6);
-  box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.05);
-  color: rgb(0, 0, 0, 1);
-}
-
 .label {
   font-size: 0.7rem;
   text-transform: capitalize;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
   display: block;
+  color: var(--cinza)
 }

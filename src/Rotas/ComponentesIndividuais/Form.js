@@ -2,7 +2,8 @@ import React from 'react'
 import Selection from './Selection'
 import styles from '../Styles/Form.module.css'
 
-const Form = ({adminRegion, setAdminRegion, base}) => {
+const Form = ({ adminRegion, setAdminRegion, base }) => {
+
   const [continenteURL, setContinenteURL] = React.useState(null)
   const [paisURL, setPaisURL] = React.useState(null)
 
