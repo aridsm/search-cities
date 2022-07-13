@@ -1,4 +1,6 @@
-# Search-cities
+# Search-cities  
+
+![página inicial](https://github.com/aridsm/search-cities/blob/master/public/page_cities.gif)
 
 ## Descrição  
 
