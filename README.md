@@ -3,15 +3,19 @@
 ## Descriçao  
 
 Projeto de um website de busca de dados de cidades feito a partir da API Teleport.
-Possui tres rotas navegaveis, além de uma pagina 404:
+Possui três rotas navegáveis, além de uma página 404:
 - Pagina principal
 - Pagina de dados das cidades
-- Pagina de busca de cidades a partir de continente, pais e divisao.
-  
+- Pagina de busca de cidades a partir de continente, pais e divisão.
+
+## Como funciona
+
+Procure por uma cidade na barra de pesquisa da página inicial ou na lista de cidades na aba "List of cities". Ao procurar por uma cidade serão exibidos dados como população, pais e divisão pertencente e, se a cidade fizer parte de uma área urbana, serão mostrados dados como custo de vida, educação, clima dentre outros. *O idioma do website está em inglês devido à API*.
+
 ## Liguagens e ferramentas  
 
 Feito com React js, HTML e CSS.  
 
-[**Link**](https://aridsm.github.io/search-cities/)
+## Acesse o site
 
-![navegaçao da pagina](https://github.com/aridsm/search-cities/blob/master/src/assets/page.gif)
+https://aridsm.github.io/search-cities/
