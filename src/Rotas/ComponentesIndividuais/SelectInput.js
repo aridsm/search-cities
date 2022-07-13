@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../Styles/SelectInput.module.css'
 import InputStyled from './InputStyled'
 
-const SelectInput = ({ option, setOption, data, type }) => {
+const SelectInput = ({ option, setOption, data, label }) => {
 
   const value = React.useRef()
 
@@ -16,9 +16,9 @@ const SelectInput = ({ option, setOption, data, type }) => {
 
   return (
     <div>
-      <label htmlFor={type} className={styles.label}>{type}</label>
+      <label htmlFor={label} className={styles.label}>{label}</label>
       <InputStyled>
-        <select value={option?.option} onChange={handleChange} id={type} ref={value}>
+        <select value={option?.option} onChange={handleChange} id={label} ref={value}>
           {data.length ?
             data.map(item =>
               <option key={item.name} value={item.href}>{item.name}</option>

@@ -4,7 +4,7 @@ import Carregando from '../Utilities/Carregando'
 import Erro from '../Utilities/Erro'
 import SelectInput from './SelectInput'
 
-const Selection = ({ option, setOption, url }) => {
+const Selection = ({ option, setOption, url, geoType, label }) => {
 
   const { data, error, loading, request } = useFetch()
 
@@ -20,13 +20,7 @@ const Selection = ({ option, setOption, url }) => {
   if (data)
     return (
       <>
-        {data._links["continent:items"] && <SelectInput data={data._links["continent:items"]} option={option} setOption={setOption} type='continent' />}
-
-        {data._links["country:items"] && <SelectInput data={data._links["country:items"]} option={option} setOption={setOption} type='country' />}
-
-        {data._links["a1:items"] ? <SelectInput data={data._links["a1:items"]} option={option} setOption={setOption} type='administrative region' />
-          : ''
-        }
+        <SelectInput data={data._links[geoType]} option={option} setOption={setOption} label={label} />
       </>
     )
 }
