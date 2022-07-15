@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem
 }
 
 .main h1 {
@@ -27,4 +26,5 @@
   .main h1 {
     font-size: 2rem;
   }
+
 }

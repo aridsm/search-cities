@@ -12,17 +12,17 @@ const useFetch = () => {
       setLoading(true)
       const response = await fetch(url);
       json = await response.json();
-    }catch(err) {
+    } catch (err) {
       json = null;
       setError(true);
-    }finally{
+    } finally {
       setLoading(null);
       setData(json)
     }
   }, [])
 
 
-  return {error, data, loading, request}
+  return { error, data, loading, request }
 }
 
 export default useFetch

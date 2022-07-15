@@ -62,6 +62,14 @@
   border-radius: 1rem;
   border: 1px solid var(--cor-hover);
   list-style: none;
+  transform: translateX(1rem);
+  animation: .5s animaResults forwards;
+}
+
+@keyframes animaResults {
+  to {
+    transform: translateX(0);
+  }
 }
 
 .results a {
@@ -81,6 +89,6 @@
 
 @media all and (max-width: 550px) {
   .results {
-    width: 90%
+    width: calc(100vw - 2rem)
   }
 }

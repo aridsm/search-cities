@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       <div ref={ref} className={styles.searchField}>
         {!isVisible &&
-          <button className={styles.btnSearch} aria-label='abrir barra de pesquisa'>
+          <button className={styles.btnSearch} aria-label='Open searchbar'>
             <SvgSearch />
           </button>}
         {isVisible && <SearchInput />}
