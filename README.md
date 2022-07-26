@@ -1,14 +1,15 @@
 # Search-cities  
 
-![página inicial](https://github.com/aridsm/search-cities/blob/master/public/page_cities.gif)
-
 ## Descrição  
 
 Projeto de um website de busca de dados de cidades feito a partir da API Teleport.
 Possui três rotas navegáveis, além de uma página 404:
 - Página principal
 - Página de dados das cidades
-- Página de busca de cidades a partir de continente, país e divisão.
+- Página de busca de cidades a partir de continente, país e divisão.  
+
+
+![página inicial](https://github.com/aridsm/search-cities/blob/master/public/page.gif)
 
 ## Como funciona
 
