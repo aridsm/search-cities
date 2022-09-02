@@ -9,9 +9,9 @@ const Form = ({ adminRegion, setAdminRegion, base }) => {
 
   return (
     <form className={styles.form}>
-      <Selection option={continenteURL} setOption={setContinenteURL} url={`${base}/continents/`} geoType='continent:items' label='continent' />
-      {continenteURL && <Selection option={paisURL} setOption={setPaisURL} url={`${continenteURL}countries/`} geoType='country:items' label='countries' />}
-      {paisURL && <Selection option={adminRegion} setOption={setAdminRegion} url={`${paisURL}admin1_divisions/`} geoType='a1:items' label='administrative region' />}
+      <Selection link={continenteURL} setLink={setContinenteURL} url={`${base}/continents/`} geoType='continent:items' label='continent' />
+      {continenteURL && <Selection link={paisURL} setLink={setPaisURL} url={`${continenteURL}countries/`} geoType='country:items' label='countries' />}
+      {paisURL && <Selection link={adminRegion} setLink={setAdminRegion} url={`${paisURL}admin1_divisions/`} geoType='a1:items' label='administrative region' />}
     </form>
   )
 }

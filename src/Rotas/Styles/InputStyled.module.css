@@ -12,7 +12,6 @@
   font-weight: inherit;
   color: var(--cinza);
   font-size: 0.875rem;
-  cursor: pointer;
   background: var(--cor-5);
 }
 
@@ -20,7 +19,7 @@
 .container input:focus,
 .container select:hover,
 .container select:focus {
-  border: 1px solid var(--texto);
+  border: 1px solid var(--cinza);
   box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.03);
   color: var(--texto);
 }

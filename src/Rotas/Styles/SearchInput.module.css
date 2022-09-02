@@ -31,7 +31,7 @@
 }
 
 .btnClose:hover svg {
-  fill: var(--texto)
+  fill: var(--texto);
 }
 
 .form {
@@ -63,7 +63,7 @@
   border: 1px solid var(--cor-hover);
   list-style: none;
   transform: translateX(1rem);
-  animation: .5s animaResults forwards;
+  animation: 0.5s animaResults forwards;
 }
 
 @keyframes animaResults {
@@ -89,6 +89,6 @@
 
 @media all and (max-width: 550px) {
   .results {
-    width: calc(100vw - 2rem)
+    width: calc(100vw - 2rem);
   }
 }

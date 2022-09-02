@@ -11,7 +11,7 @@ const PagListaCidades = () => {
     <main>
       <h1>Cities List</h1>
       <Form adminRegion={adminRegion} setAdminRegion={setAdminRegion} base={base} />
-      <ListaCidades url={`${adminRegion}cities/`} />
+      {adminRegion && <ListaCidades url={`${adminRegion}cities/`} />}  
     </main>
   )
 }
