@@ -7,6 +7,7 @@ import { ReactComponent as PersonSvg } from '../assets/personSvg.svg'
 import UrbanAreaDados from './ComponentesIndividuais/UrbanAreaDados'
 import Erro from './Utilities/Erro'
 import Carregando from './Utilities/Carregando'
+import Head from './Utilities/Head'
 
 const PagCidades = () => {
 
@@ -26,6 +27,7 @@ const PagCidades = () => {
   if (data)
     return (
       <main>
+      <Head title={data.name} description={`${data.name} data.`}/>
         <h1 className={styles.titulo}>{data.name}</h1>
         <p className={styles.division}><span>Division</span>: {data._links["city:admin1_division"].name}</p>
         <p className={styles.country}><span>Country</span>: {data._links["city:country"].name}</p>
