@@ -1,19 +1,40 @@
-import React from 'react'
-import Selection from './Selection'
-import styles from '../Styles/Form.module.css'
+import React, { useContext, useEffect } from "react";
+import Selection from "./Selection";
+import styles from "../Styles/Form.module.css";
+import { geoContext } from "../../context/geoContext";
 
-const Form = ({ adminRegion, setAdminRegion, base }) => {
+const Form = () => {
+  const geoCtx = useContext(geoContext);
 
-  const [continenteURL, setContinenteURL] = React.useState(null)
-  const [paisURL, setPaisURL] = React.useState(null)
+  console.log(geoCtx.admRegionsList);
 
   return (
     <form className={styles.form}>
-      <Selection link={continenteURL} setLink={setContinenteURL} url={`${base}/continents/`} geoType='continent:items' label='continent' />
-      {continenteURL && <Selection link={paisURL} setLink={setPaisURL} url={`${continenteURL}countries/`} geoType='country:items' label='countries' />}
-      {paisURL && <Selection link={adminRegion} setLink={setAdminRegion} url={`${paisURL}admin1_divisions/`} geoType='a1:items' label='administrative region' />}
-    </form>
-  )
-}
+      {geoCtx.continentsList && (
+        <Selection
+          label="Continent"
+          listItens={geoCtx.continentsList._links["continent:items"]}
+          fetchItens={geoCtx.fetchCountriesHandler}
+        />
+      )}
 
-export default Form
+      {geoCtx.countriesList && (
+        <Selection
+          label="Country"
+          listItens={geoCtx.countriesList._links["country:items"]}
+          fetchItens={geoCtx.fetchAdmRegionsHandler}
+        />
+      )}
+
+      {geoCtx.admRegionsList && (
+        <Selection
+          label="Administrative Region"
+          listItens={geoCtx.admRegionsList._links["a1:items"]}
+          fetchItens={geoCtx.fetchCitiesHandler}
+        />
+      )}
+    </form>
+  );
+};
+
+export default Form;

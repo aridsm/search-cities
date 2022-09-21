@@ -1,58 +1,48 @@
-import React, { memo, useEffect } from 'react'
-import useFetch from '../../Hooks/useFetch'
-import Carregando from '../Utilities/Carregando'
-import Erro from '../Utilities/Erro'
-import InputStyled from './InputStyled'
-import styles from '../Styles/SelectInput.module.css'
+import React, { memo, useEffect, useRef } from "react";
+import useFetch from "../../Hooks/useFetch";
+import Carregando from "../Utilities/Carregando";
+import Erro from "../Utilities/Erro";
+import InputStyled from "./InputStyled";
+import styles from "../Styles/SelectInput.module.css";
 
-const Selection = ({ link, setLink, url, geoType, label }) => {
-
-  const { data, error, loading, request } = useFetch();
-  
-  useEffect(() => {
-    
-    async function fetchData() {
-      await request(url)
-    }
-    fetchData()
-  }, [request, url]);
-
-  let dataItems;
-
-  if (data) {
-    dataItems = data._links[geoType];
-  }
+const Selection = ({ listItens, label, fetchItens }) => {
+  const refSelect = useRef();
 
   useEffect(() => {
-    if (dataItems && dataItems.length){
-      setLink(dataItems[0].href)
-    }
-  }, [dataItems, setLink])
+    fetchItens(refSelect.current.value);
+    console.log(listItens);
+  }, []);
 
-  const handleChangeURL = (target) => {
-    setLink(target.value)
-  }
-  if (error) return <Erro/>
-  if (loading) return <Carregando/>
-  if (dataItems && link)
+  const fetchNewItensListHandler = () => {
+    fetchItens(refSelect.current.value);
+  };
+
   return (
     <>
-    <div>
-    <label htmlFor={label} className={styles.label}>{label}</label>
-    <InputStyled>
-    <select value={link} onChange={({target}) => handleChangeURL(target)} id={label}>
-        {dataItems.length ?
-          dataItems.map(item =>
-            <option key={item.name} value={item.href}>{item.name}</option>
-          )
-          :
-          <option value=''>No matches</option>
-        }
-      </select>
-    </InputStyled>
-  </div> 
+      <div>
+        <label htmlFor={label} className={styles.label}>
+          {label}
+        </label>
+        <InputStyled>
+          <select
+            id={label}
+            ref={refSelect}
+            onChange={fetchNewItensListHandler}
+          >
+            {listItens.length ? (
+              listItens.map((item) => (
+                <option key={item.name} value={item.href}>
+                  {item.name}
+                </option>
+              ))
+            ) : (
+              <option value="">No matches</option>
+            )}
+          </select>
+        </InputStyled>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default memo(Selection)
+export default memo(Selection);
