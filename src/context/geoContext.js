@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import useFetch from "../Hooks/useFetch";
 
 export const geoContext = createContext();
@@ -28,6 +28,10 @@ const GeoContextProvider = ({ children }) => {
     request: requestCities,
   } = useFetch();
 
+  const [selectedContinent, setSelectedContinent] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedAdmRegion, setSelectedAdmRegion] = useState(null);
+
   useEffect(() => {
     async function fetchData() {
       await requestContinent("https://api.teleport.org/api/continents/");
@@ -35,25 +39,35 @@ const GeoContextProvider = ({ children }) => {
     fetchData();
   }, [requestContinent]);
 
-  const fetchCountriesHandler = (urlSelected) => {
+  useEffect(() => {
     async function fetchData() {
-      await requestCountries(urlSelected + "countries");
+      await requestCountries(selectedContinent + "countries");
     }
     fetchData();
-  };
+  }, [requestCountries, selectedContinent]);
 
-  const fetchAdmRegionsHandler = (urlSelected) => {
+  useEffect(() => {
     async function fetchData() {
-      await requestAdmRegions(urlSelected + "admin1_divisions");
+      await requestAdmRegions(selectedCountry + "admin1_divisions");
     }
     fetchData();
-  };
+  }, [requestAdmRegions, selectedCountry]);
 
-  const fetchCitiesHandler = (urlSelected) => {
+  useEffect(() => {
     async function fetchData() {
-      await requestCities(urlSelected + "cities");
+      await requestCities(selectedAdmRegion + "cities");
     }
     fetchData();
+  }, [requestCities, selectedAdmRegion]);
+
+  const setNewContinentValue = (value) => {
+    setSelectedContinent(value);
+  };
+  const setNewCountryValue = (value) => {
+    setSelectedCountry(value);
+  };
+  const setNewAdmRegiontValue = (value) => {
+    setSelectedAdmRegion(value);
   };
 
   const values = {
@@ -61,9 +75,9 @@ const GeoContextProvider = ({ children }) => {
     countriesList,
     admRegionsList,
     citiesList,
-    fetchCountriesHandler,
-    fetchAdmRegionsHandler,
-    fetchCitiesHandler,
+    setNewContinentValue,
+    setNewCountryValue,
+    setNewAdmRegiontValue,
   };
 
   return <geoContext.Provider value={values}>{children}</geoContext.Provider>;

@@ -1,7 +1,7 @@
 .container input,
 .container select {
   border: 1px solid var(--cinza);
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   padding: 0.7rem;
   width: 100%;
   text-align: center;
@@ -27,5 +27,5 @@
 .container input::placeholder,
 .container select::placeholder {
   font-size: 0.875rem;
-  color: inherit
+  color: inherit;
 }

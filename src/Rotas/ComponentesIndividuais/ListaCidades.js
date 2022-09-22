@@ -4,7 +4,6 @@ import Carregando from "../Utilities/Carregando";
 import { Link } from "react-router-dom";
 
 const ListaCidades = ({ listCities }) => {
-  console.log(listCities);
   return (
     <nav className={styles.nav}>
       {listCities.map((item) => (

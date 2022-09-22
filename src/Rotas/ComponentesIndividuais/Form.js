@@ -5,16 +5,14 @@ import { geoContext } from "../../context/geoContext";
 
 const Form = () => {
   const geoCtx = useContext(geoContext);
-
-  console.log(geoCtx.admRegionsList);
-
+  console.log("renderizando de novo");
   return (
     <form className={styles.form}>
       {geoCtx.continentsList && (
         <Selection
           label="Continent"
           listItens={geoCtx.continentsList._links["continent:items"]}
-          fetchItens={geoCtx.fetchCountriesHandler}
+          setValue={geoCtx.setNewContinentValue}
         />
       )}
 
@@ -22,7 +20,7 @@ const Form = () => {
         <Selection
           label="Country"
           listItens={geoCtx.countriesList._links["country:items"]}
-          fetchItens={geoCtx.fetchAdmRegionsHandler}
+          setValue={geoCtx.setNewCountryValue}
         />
       )}
 
@@ -30,7 +28,7 @@ const Form = () => {
         <Selection
           label="Administrative Region"
           listItens={geoCtx.admRegionsList._links["a1:items"]}
-          fetchItens={geoCtx.fetchCitiesHandler}
+          setValue={geoCtx.setNewAdmRegiontValue}
         />
       )}
     </form>

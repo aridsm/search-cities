@@ -1,20 +1,19 @@
 import React, { memo, useEffect, useRef } from "react";
-import useFetch from "../../Hooks/useFetch";
 import Carregando from "../Utilities/Carregando";
 import Erro from "../Utilities/Erro";
 import InputStyled from "./InputStyled";
 import styles from "../Styles/SelectInput.module.css";
 
-const Selection = ({ listItens, label, fetchItens }) => {
+const Selection = ({ listItens, label, setValue }) => {
   const refSelect = useRef();
 
   useEffect(() => {
-    fetchItens(refSelect.current.value);
-    console.log(listItens);
-  }, []);
+    setValue(refSelect.current.value);
+    console.log(refSelect.current.value);
+  }, [setValue, label]);
 
   const fetchNewItensListHandler = () => {
-    fetchItens(refSelect.current.value);
+    setValue(refSelect.current.value);
   };
 
   return (
