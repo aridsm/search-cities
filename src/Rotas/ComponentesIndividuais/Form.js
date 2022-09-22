@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Selection from "./Selection";
 import styles from "../Styles/Form.module.css";
 import { geoContext } from "../../context/geoContext";

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import useFetch from "../Hooks/useFetch";
 
 export const geoContext = createContext();

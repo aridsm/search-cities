@@ -1,18 +1,17 @@
 .container input,
 .container select {
-  border: 1px solid var(--cinza);
   border-radius: 0.5rem;
   padding: 0.7rem;
   width: 100%;
   text-align: center;
-  outline: none;
   position: relative;
   z-index: 999;
   font-family: inherit;
   font-weight: inherit;
   color: var(--cinza);
   font-size: 0.875rem;
-  background: var(--cor-5);
+  border: 1px solid var(--cor-hover);
+  background: var(--cor-6);
 }
 
 .container input:hover,

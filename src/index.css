@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: .1s;
+  transition: 0.1s;
 }
 
 body {
   background: var(--cor-5);
-  --cor-1: #FF401F;
-  --cor-2: #E80C57;
-  --cor-3: #E401FF;
-  --cor-4: #6D0CE8;
+  --cor-1: #ff401f;
+  --cor-2: #e80c57;
+  --cor-3: #e401ff;
+  --cor-4: #6d0ce8;
   --texto: #e5dff0;
   --cinza: #928ba3;
   --cor-5: #191920;
+  --cor-6: #21212b;
   --cor-hover: #29292e;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   color: var(--texto);
-  background-image: url('./assets/bg1.svg'), url('./assets/bg2.svg');
+  background-image: url("./assets/bg1.svg"), url("./assets/bg2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -38,7 +39,7 @@ button {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  cursor: pointer
+  cursor: pointer;
 }
 
 main {
@@ -49,11 +50,14 @@ main {
   min-height: calc(100vh - 10rem);
 }
 
-input {
+input,
+select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   font-weight: inherit;
+  border: none;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -67,5 +71,5 @@ input {
 ::-webkit-scrollbar-thumb {
   background-image: linear-gradient(180deg, var(--cor-2), var(--cor-1));
   border-radius: 6px;
-  border: 1px solid var(--cor-5)
+  border: 1px solid var(--cor-5);
 }
