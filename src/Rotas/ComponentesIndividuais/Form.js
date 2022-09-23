@@ -8,37 +8,36 @@ import Erro from "../Utilities/Erro";
 const Form = () => {
   const geoCtx = useContext(geoContext);
 
-  console.log(geoCtx);
-
   return (
     <form className={styles.form}>
-      {geoCtx.continentsList ? (
+      {geoCtx.loadingContinents ? (
+        <Carregando />
+      ) : geoCtx.continentsList ? (
         <Selection
           label="Continent"
           listItens={geoCtx.continentsList._links["continent:items"]}
           setValue={geoCtx.setNewContinentValue}
         />
-      ) : geoCtx.loadingContinents ? (
-        <p>carregando</p>
       ) : null}
 
-      {geoCtx.countriesList ? (
+      {geoCtx.loadingCountries ? (
+        <Carregando />
+      ) : geoCtx.countriesList ? (
         <Selection
           label="Country"
           listItens={geoCtx.countriesList._links["country:items"]}
           setValue={geoCtx.setNewCountryValue}
         />
-      ) : geoCtx.loadingCountries ? (
-        <p>carregando</p>
       ) : null}
-      {geoCtx.admRegionsList ? (
+
+      {geoCtx.loadingAdmRegions ? (
+        <Carregando />
+      ) : geoCtx.admRegionsList ? (
         <Selection
           label="Administrative Region"
           listItens={geoCtx.admRegionsList._links["a1:items"]}
-          setValue={geoCtx.setNewAdmRegiontValue}
+          setValue={geoCtx.setNewAdmRegionValue}
         />
-      ) : geoCtx.loadingAdmRegions ? (
-        <p>carregando</p>
       ) : null}
     </form>
   );

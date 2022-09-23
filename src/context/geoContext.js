@@ -20,7 +20,7 @@ const GeoContextProvider = ({ children }) => {
 
   const {
     data: admRegionsList,
-    setNewValue: setNewAdmRegiontValue,
+    setNewValue: setNewAdmRegionValue,
     selectedValue: selectedAdmRegion,
     loading: loadingAdmRegions,
   } = useGeoFetch(selectedCountry + "admin1_divisions");
@@ -36,10 +36,11 @@ const GeoContextProvider = ({ children }) => {
     citiesList,
     setNewContinentValue,
     setNewCountryValue,
-    setNewAdmRegiontValue,
+    setNewAdmRegionValue,
     loadingContinents,
     loadingCountries,
     loadingAdmRegions,
+    loadingCities,
   };
 
   return <geoContext.Provider value={values}>{children}</geoContext.Provider>;

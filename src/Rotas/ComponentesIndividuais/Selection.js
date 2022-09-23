@@ -15,6 +15,8 @@ const Selection = ({ listItens, label, setValue }) => {
     setValue(refSelect.current.value);
   };
 
+  console.log("renderizando..");
+
   return (
     <>
       <div>
