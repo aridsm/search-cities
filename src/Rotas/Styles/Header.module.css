@@ -5,19 +5,23 @@
   max-width: 75rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0 0.8rem
+  padding: 0 0.8rem;
 }
 
-.header>* {
+.header > * {
   flex: 1;
 }
 
-.nav a+a {
+.nav a + a {
   margin-left: 1.5rem;
 }
 
 .nav a:hover {
-  color: var(--cinza)
+  color: var(--cinza);
+}
+
+.nav a:active {
+  transform: scale(0.95);
 }
 
 .logo {
@@ -40,11 +44,11 @@
 
 .btnSearch svg {
   width: 1.3rem;
-  fill: var(--texto)
+  fill: var(--texto);
 }
 
 .btnSearch svg:hover {
-  fill: var(--cinza)
+  fill: var(--cinza);
 }
 
 .searchField {
@@ -55,9 +59,8 @@
 }
 
 @media all and (max-width: 550px) {
-
   .logo {
-    order: -1
+    order: -1;
   }
 
   .logo svg {
@@ -73,10 +76,10 @@
   }
 
   .searchField input {
-    width: calc(100vw - 2rem)
+    width: calc(100vw - 2rem);
   }
 
-  .header>* {
+  .header > * {
     flex: 0;
   }
 

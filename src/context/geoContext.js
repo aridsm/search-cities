@@ -1,74 +1,33 @@
-import React, { createContext, useEffect, useState } from "react";
-import useFetch from "../Hooks/useFetch";
+import React, { createContext } from "react";
+import useGeoFetch from "../Hooks/useGeoFetch";
 
 export const geoContext = createContext();
 
 const GeoContextProvider = ({ children }) => {
   const {
     data: continentsList,
+    setNewValue: setNewContinentValue,
+    selectedValue: selectedContinent,
     loading: loadingContinents,
-    request: requestContinent,
-  } = useFetch();
+  } = useGeoFetch("https://api.teleport.org/api/continents/");
 
   const {
     data: countriesList,
+    setNewValue: setNewCountryValue,
+    selectedValue: selectedCountry,
     loading: loadingCountries,
-    request: requestCountries,
-  } = useFetch();
+  } = useGeoFetch(selectedContinent + "countries");
 
   const {
     data: admRegionsList,
+    setNewValue: setNewAdmRegiontValue,
+    selectedValue: selectedAdmRegion,
     loading: loadingAdmRegions,
-    request: requestAdmRegions,
-  } = useFetch();
+  } = useGeoFetch(selectedCountry + "admin1_divisions");
 
-  const {
-    data: citiesList,
-    loading: loadingCities,
-    request: requestCities,
-  } = useFetch();
-
-  const [selectedContinent, setSelectedContinent] = useState(null);
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [selectedAdmRegion, setSelectedAdmRegion] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      await requestContinent("https://api.teleport.org/api/continents/");
-    }
-    fetchData();
-  }, [requestContinent]);
-
-  useEffect(() => {
-    async function fetchData() {
-      await requestCountries(selectedContinent + "countries");
-    }
-    fetchData();
-  }, [requestCountries, selectedContinent]);
-
-  useEffect(() => {
-    async function fetchData() {
-      await requestAdmRegions(selectedCountry + "admin1_divisions");
-    }
-    fetchData();
-  }, [requestAdmRegions, selectedCountry]);
-
-  useEffect(() => {
-    async function fetchData() {
-      await requestCities(selectedAdmRegion + "cities");
-    }
-    fetchData();
-  }, [requestCities, selectedAdmRegion]);
-
-  const setNewContinentValue = (value) => {
-    setSelectedContinent(value);
-  };
-  const setNewCountryValue = (value) => {
-    setSelectedCountry(value);
-  };
-  const setNewAdmRegiontValue = (value) => {
-    setSelectedAdmRegion(value);
-  };
+  const { data: citiesList, loading: loadingCities } = useGeoFetch(
+    selectedAdmRegion + "cities"
+  );
 
   const values = {
     continentsList,
@@ -78,6 +37,9 @@ const GeoContextProvider = ({ children }) => {
     setNewContinentValue,
     setNewCountryValue,
     setNewAdmRegiontValue,
+    loadingContinents,
+    loadingCountries,
+    loadingAdmRegions,
   };
 
   return <geoContext.Provider value={values}>{children}</geoContext.Provider>;

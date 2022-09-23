@@ -9,7 +9,6 @@ const Selection = ({ listItens, label, setValue }) => {
 
   useEffect(() => {
     setValue(refSelect.current.value);
-    console.log(refSelect.current.value);
   }, [setValue, label]);
 
   const fetchNewItensListHandler = () => {

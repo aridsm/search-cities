@@ -32,8 +32,8 @@ a {
   font-size: inherit;
   font-weight: inherit;
   text-decoration: none;
+  display: inline-block;
 }
-
 button {
   color: inherit;
   font-family: inherit;

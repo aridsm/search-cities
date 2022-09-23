@@ -11,8 +11,10 @@ const PagListaCidades = () => {
       <Head title="Cities list" description="Search city from location" />
       <h1>Cities List</h1>
       <Form />
-      {geoCtx.citiesList && (
+      {geoCtx.citiesList && geoCtx.citiesList._links["city:items"].length ? (
         <ListaCidades listCities={geoCtx.citiesList._links["city:items"]} />
+      ) : (
+        <p>No matches</p>
       )}
     </main>
   );

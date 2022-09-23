@@ -11,7 +11,8 @@
   margin: 0.3rem 0;
   border: 1px solid var(--cor-hover);
   color: var(--cinza);
-  border-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,6 +20,10 @@
   color: var(--texto);
   border-color: var(--texto);
   border-left-color: transparent;
+}
+
+.button:active {
+  transform: scale(0.99);
 }
 
 .button::before {
