@@ -17,7 +17,7 @@ body {
   --cinza: #b4aec5;
   --cor-5: #191920;
   --cor-6: #21212b;
-  --cor-hover: #29292e;
+  --cor-hover: #262632;
   font-family: "Merriweather", serif;
   color: var(--texto);
   background-image: url("./assets/bg1.svg"), url("./assets/bg2.svg");

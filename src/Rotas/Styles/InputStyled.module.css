@@ -5,7 +5,7 @@
   width: 100%;
   text-align: center;
   position: relative;
-  z-index: 999;
+  z-index: 9;
   font-family: inherit;
   font-weight: inherit;
   color: var(--cinza);

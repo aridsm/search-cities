@@ -14,7 +14,6 @@
   position: absolute;
   top: 0.7rem;
   right: 1rem;
-  z-index: 999;
   display: flex;
   align-items: center;
   background: transparent;
@@ -57,8 +56,8 @@
   position: absolute;
   right: 0;
   left: 0;
-  background: var(--cor-5);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  background: var(--cor-6);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   border: 1px solid var(--cor-hover);
   list-style: none;

@@ -3,7 +3,6 @@ import Selection from "./Selection";
 import styles from "../Styles/Form.module.css";
 import { geoContext } from "../../context/geoContext";
 import Carregando from "../Utilities/Carregando";
-import Erro from "../Utilities/Erro";
 
 const Form = () => {
   const geoCtx = useContext(geoContext);

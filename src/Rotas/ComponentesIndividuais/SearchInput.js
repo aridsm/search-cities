@@ -15,23 +15,23 @@ const SearchInput = () => {
   const input = React.useRef();
   const { isVisible } = useVisibility(ref);
 
-  const fetchData = React.useCallback(
-    async (value) => {
-      await request(
-        `https://api.teleport.org/api/cities/?search=${value}&limit=10`
-      );
-    },
-    [request]
-  );
+  const fetchData = async (value) => {
+    await request(
+      `https://api.teleport.org/api/cities/?search=${value}&limit=10`
+    );
+  };
 
-  const handleChange = React.useCallback(
-    (e) => {
-      e.preventDefault();
-      setSearchValue(e.target.value);
-      fetchData(e.target.value);
-    },
-    [fetchData]
-  );
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchValue(e.target.value);
+    fetchData(e.target.value);
+  };
+
+  const cleanSearchDataHandler = () => {
+    setSearchValue("");
+    input.current.value = "";
+    input.current.focus();
+  };
 
   return (
     <>
@@ -54,11 +54,7 @@ const SearchInput = () => {
           ) : (
             <button
               className={styles.btnClose}
-              onClick={() => {
-                setSearchValue("");
-                input.current.value = "";
-                input.current.focus();
-              }}
+              onClick={cleanSearchDataHandler}
             >
               <CloseSvg />
             </button>
