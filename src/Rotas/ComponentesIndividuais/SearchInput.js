@@ -8,6 +8,24 @@ import useVisibility from "../../Hooks/useVisibility";
 import Carregando from "../Utilities/Carregando";
 import InputStyled from "./InputStyled";
 
+const ResultsCities = ({ data }) => {
+  return (
+    <ul className={styles.results}>
+      {data._embedded["city:search-results"].map((item) => (
+        <li key={item.matching_full_name}>
+          <Link
+            to={`/cidades/${item._links["city:item"].href.substring(
+              item._links["city:item"].href.indexOf("geonameid:") + 10
+            )}`}
+          >
+            {item.matching_full_name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const SearchInput = () => {
   const [searchValue, setSearchValue] = React.useState("");
   const { data, request, loading } = useFetch();
@@ -61,19 +79,7 @@ const SearchInput = () => {
           )}
         </form>
         {data && searchValue.length && isVisible ? (
-          <ul className={styles.results}>
-            {data._embedded["city:search-results"].map((item) => (
-              <li key={item.matching_full_name}>
-                <Link
-                  to={`/cidades/${item._links["city:item"].href.substring(
-                    item._links["city:item"].href.indexOf("geonameid:") + 10
-                  )}`}
-                >
-                  {item.matching_full_name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <ResultsCities data={data} />
         ) : loading ? (
           <ul className={styles.results}>
             <Carregando />
